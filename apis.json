@@ -1,0 +1,125 @@
+{
+    "name": "Datadog",
+    "description": "See inside any stack, any app, at any scale, anywhere.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/22961-datadog.jpg",
+    "tags": [
+        "aggregation",
+        "api provider",
+        "api service provider",
+        "have api",
+        "monitoring",
+        "orchestration",
+        "performance",
+        "relative data",
+        "service api"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/datadog\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "User API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/22961-datadog.jpg",
+            "humanURL": "https:\/\/www.datadoghq.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/user-api-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/user-api.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/user-api-postman-collection.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/user-api-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "DataDog Merged API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/22961-datadog.jpg",
+            "humanURL": "https:\/\/www.datadoghq.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/datadog-merged-api.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/datadog-merged-api-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "https:\/\/www.datadoghq.com\/blog\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "https:\/\/www.datadoghq.com\/feed\/"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/datadog"
+        },
+        {
+            "type": "Email",
+            "url": "info@datadoghq.com"
+        },
+        {
+            "type": "Email",
+            "url": "help@datadoghq.com"
+        },
+        {
+            "type": "Email",
+            "url": "legalcompliance@datadoghq.com"
+        },
+        {
+            "type": "Email",
+            "url": "legal@datadoghq.com"
+        },
+        {
+            "type": "Email",
+            "url": "iwant@datadoghq.com"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/datadog"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/datadoghq"
+        },
+        {
+            "type": "Integrations",
+            "url": "https:\/\/www.datadoghq.com\/product\/integrations\/"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/www.datadoghq.com\/pricing\/"
+        },
+        {
+            "type": "Security",
+            "url": "https:\/\/www.datadoghq.com\/security\/"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/www.datadoghq.com\/"
+        }
+    ]
+}
