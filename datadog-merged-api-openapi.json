@@ -1,0 +1,666 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "DataDog Merged API",
+        "description": "",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httpsapi\/v1\/"
+    ],
+    "paths": {
+        "\/metrics": {
+            "GET": {
+                "summary": "Get Metrics",
+                "description": "\n          Get the list of actively reporting metrics from a given time until now. This endpoint is not available in the Python and Ruby libraries.\n        ",
+                "operationId": "GetMetrics",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/series": {
+            "POST": {
+                "summary": "Add Series",
+                "description": "\n          The metrics end-point allows you to post time-series data that can be\n          graphed on Datadog's dashboards.\n        ",
+                "operationId": "PostSeries",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "[[POSIX_timestamp, numeric_value], ...]",
+                        "in": "query",
+                        "description": "\n              \n              Note that the timestamp should be in seconds, must be current, and the numeric value is a 32bit float gauge-type value.\n            \n          "
+                    }
+                ]
+            }
+        },
+        "\/query": {
+            "GET": {
+                "summary": "Get Query",
+                "description": "\n          This end point allows you to query for metrics from any time period.\n        ",
+                "operationId": "GetQuery",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/check_run": {
+            "POST": {
+                "summary": "Add Check Run",
+                "description": "Post a Check Run",
+                "operationId": "PostCheckRun",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/downtime": {
+            "POST": {
+                "summary": "Add Downtime",
+                "description": "Schedule monitor downtime",
+                "operationId": "PostDowntime",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": " the type of recurrence. Choose from: days, weeks,\n              months, years.\n              "
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": " how often to repeat as an integer. For example to repeat every 3 days, select\n                a type of days and a period of 3.\n              "
+                    },
+                    {
+                        "name": "week_days",
+                        "in": "query",
+                        "description": " (optional) a list of week days to repeat on. Choose from: Mon, Tue, Wed, Thu, Fri, Sat or Sun. Only applicable when type is weeks. First letter must be capitalized.\n              "
+                    },
+                    {
+                        "name": "until_occurrences",
+                        "in": "query",
+                        "description": " (optional) how many times the downtime will be rescheduled.\n                until_occurences and until_date are mutually exclusive\n              "
+                    },
+                    {
+                        "name": "until_date",
+                        "in": "query",
+                        "description": " (optional) the date at which the recurrence should end as a POSIX timestmap.\n                until_occurences and until_date are mutually exclusive\n              "
+                    }
+                ]
+            },
+            "GET": {
+                "summary": "Get Downtime",
+                "description": "Get all monitor downtimes",
+                "operationId": "GetDowntime",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/downtime\/:downtime_id": {
+            "PUT": {
+                "summary": "Put Downtime Downtime",
+                "description": "Update monitor downtime",
+                "operationId": "PutDowntimeDowntime",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": " the type of recurrence. Choose from: days, weeks,\n              months, years.\n              "
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": " how often to repeat as an integer. For example to repeat every 3 days, select\n                a type of days and a period of 3.\n              "
+                    },
+                    {
+                        "name": "week_days",
+                        "in": "query",
+                        "description": " (optional) a list of week days to repeat on. Choose from: Mon, Tue, Wed, Thu, Fri, Sat or Sun. Only applicable when type is weeks. First letter must be capitalized.\n              "
+                    },
+                    {
+                        "name": "until_occurrences",
+                        "in": "query",
+                        "description": " (optional) how many times the downtime will be rescheduled.\n                until_occurences and until_date are mutually exclusive\n              "
+                    },
+                    {
+                        "name": "until_date",
+                        "in": "query",
+                        "description": " (optional) the date at which the recurrence should end as a POSIX timestmap.\n                until_occurences and until_date are mutually exclusive\n              "
+                    }
+                ]
+            },
+            "DELETE": {
+                "summary": "Delete Downtime Downtime",
+                "description": "DELETE downtime downtime",
+                "operationId": "DeleteDowntimeDowntime",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "GET": {
+                "summary": "Get Downtime Downtime",
+                "description": "Get a monitor downtime",
+                "operationId": "GetDowntimeDowntime",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/screen": {
+            "POST": {
+                "summary": "Add Screen",
+                "description": "POST screen",
+                "operationId": "PostScreen",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "GET": {
+                "summary": "Get Screen",
+                "description": "Fetch all of your screenboards' definitions.",
+                "operationId": "GetScreen",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/screen\/:board_id": {
+            "PUT": {
+                "summary": "Put Screen Board",
+                "description": "PUT screen board",
+                "operationId": "PutScreenBoard",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "DELETE": {
+                "summary": "Delete Screen Board",
+                "description": "Delete an existing screenboard.",
+                "operationId": "DeleteScreenBoard",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "GET": {
+                "summary": "Get Screen Board",
+                "description": "Fetch an existing screenboard's definition.",
+                "operationId": "GetScreenBoard",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/screen\/share\/:board_id": {
+            "GET": {
+                "summary": "Get Screen Share Board",
+                "description": "Share an existing screenboard's with a public URL.",
+                "operationId": "GetScreenShareBoard",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "DELETE": {
+                "summary": "Delete Screen Share Board",
+                "description": "Revoke a currently shared screenboard's.",
+                "operationId": "DeleteScreenShareBoard",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/tags\/hosts": {
+            "GET": {
+                "summary": "Get Tags Hosts",
+                "description": "\n          Return a mapping of tags to hosts for your whole infrastructure.\n        ",
+                "operationId": "GetTagsHosts",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/tags\/hosts\/:host_name": {
+            "GET": {
+                "summary": "Get Tags Hosts Host Name",
+                "description": "\n          Return the list of tags that apply to a given host.\n        ",
+                "operationId": "GetTagsHostsHostName",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "POST": {
+                "summary": "Add Tags Hosts Host Name",
+                "description": "\n          This end point allows you to add tags to a host.\n        ",
+                "operationId": "PostTagsHostsHostName",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "PUT": {
+                "summary": "Put Tags Hosts Host Name",
+                "description": "\n          This end point allows you to update all tags for a given host.\n        ",
+                "operationId": "PutTagsHostsHostName",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "DELETE": {
+                "summary": "Delete Tags Hosts Host Name",
+                "description": "\n          This end point allows you to remove all tags for a given host.\n        ",
+                "operationId": "DeleteTagsHostsHostName",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "comments": {
+            "POST": {
+                "summary": "Add Comments",
+                "description": "\n          Comments are essentially special forms of events that\n          appear in the stream. They can start a new discussion thread or\n          optionally, reply in another thread.\n        ",
+                "operationId": "PostComments",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "comments\/:comment_id": {
+            "PUT": {
+                "summary": "Put Comments Comment",
+                "description": "PUT comments comment",
+                "operationId": "PutCommentsComment",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "DELETE": {
+                "summary": "Delete Comments Comment",
+                "description": "DELETE comments comment",
+                "operationId": "DeleteCommentsComment",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "graph\/snapshot": {
+            "GET": {
+                "summary": "Get Graph Snapshot",
+                "description": "GET graph snapshot",
+                "operationId": "GetGraphSnapshot",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "graph_def",
+                        "in": "query",
+                        "description": " can be used instead of metric_query. The JSON document uses the grammar defined here and should be formatted to a single line then URLEncoded. The graph_def argument is only available in the REST API and not using the Ruby or Python wrappers. \n    "
+                    }
+                ]
+            }
+        },
+        "\/events": {
+            "POST": {
+                "summary": "Add Events",
+                "description": "Post an Event",
+                "operationId": "PostEvents",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/events\/:event_id": {
+            "GET": {
+                "summary": "Get Events Event",
+                "description": "GET events event",
+                "operationId": "GetEventsEvent",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "DELETE": {
+                "summary": "Delete Events Event",
+                "description": "DELETE events event",
+                "operationId": "DeleteEventsEvent",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/monitor": {
+            "POST": {
+                "summary": "Add Monitor",
+                "description": "Create a monitor",
+                "operationId": "PostMonitor",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "metric alert",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "service check",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "event alert",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "time_aggr(time_window)",
+                        "in": "query",
+                        "description": "\n            \n              \ntime_aggr avg, sum, max, min, change, or pct_change"
+                    },
+                    {
+                        "name": "time_window",
+                        "in": "query",
+                        "description": " last_#m (5, 10, 15, or 30),\n              last_#h (1, 2, or 4), or last_1d"
+                    },
+                    {
+                        "name": "space_aggr",
+                        "in": "query",
+                        "description": " avg, sum, min, or max"
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "description": " one or more tags (comma-separated), or *"
+                    },
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "description": " a 'key' in key:value tag syntax; defines a\n              separate alert for each tag in the group (multi-alert)"
+                    },
+                    {
+                        "name": "operator",
+                        "in": "query",
+                        "description": " &lt;, &lt;=, &gt;, &gt;=, ==, or !="
+                    },
+                    {
+                        "name": "#",
+                        "in": "query",
+                        "description": " an integer or decimal number used to set the\n              threshold"
+                    },
+                    {
+                        "name": "change_aggr",
+                        "in": "query",
+                        "description": " change, pct_change"
+                    },
+                    {
+                        "name": "time_aggr",
+                        "in": "query",
+                        "description": " avg, sum, max, min"
+                    },
+                    {
+                        "name": "timeshift",
+                        "in": "query",
+                        "description": " #m_ago (5, 10, 15, or 30),\n              #h_ago (1, 2, or 4), or 1d_ago"
+                    },
+                    {
+                        "name": "check",
+                        "in": "query",
+                        "description": " name of the check, e.g. datadog.agent.up"
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "description": " must be at &gt;= your max threshold (defined\n              in the options). e.g. if you want to notify on 1\n              critical, 3 ok and 2 warn statuses count should be 3."
+                    },
+                    {
+                        "name": "event",
+                        "in": "query",
+                        "description": ", the event query string:\n                \n                  \nstring_query free text query to match against event title and text."
+                    },
+                    {
+                        "name": "sources",
+                        "in": "query",
+                        "description": " event sources (comma-separated)."
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": " event statuses (comma-separated). Valid options: error, warn, and info."
+                    },
+                    {
+                        "name": "priority",
+                        "in": "query",
+                        "description": " event priorities (comma-separated). Valid options: low, normal, all."
+                    },
+                    {
+                        "name": "host",
+                        "in": "query",
+                        "description": " event reporting host (comma-separated)."
+                    },
+                    {
+                        "name": "excluded_tags",
+                        "in": "query",
+                        "description": " exluded event tags (comma-separated)."
+                    },
+                    {
+                        "name": "rollup",
+                        "in": "query",
+                        "description": " the stats rollup method. count is the only supported method now."
+                    },
+                    {
+                        "name": "last",
+                        "in": "query",
+                        "description": " the timeframe to roll up the counts. Examples: 60s, 4h. Supported timeframes: s, m, h and d."
+                    },
+                    {
+                        "name": "silenced",
+                        "in": "query",
+                        "description": " dictionary of scopes to timestamps or\n              None. Each scope will be muted until the given POSIX\n              timestamp or forever if the value is None.\n              Default: None\n              Examples:\n\n                \n\n                  To mute the alert completely:\n                      {'*': None}\n"
+                    },
+                    {
+                        "name": "role",
+                        "in": "query",
+                        "description": " for a short time:\n                      {'role:db': 1412798116}\n"
+                    },
+                    {
+                        "name": "notify_no_data",
+                        "in": "query",
+                        "description": " a boolean indicating whether this\n              monitor will notify when data stops reporting.\n              Default: false\n"
+                    },
+                    {
+                        "name": "no_data_timeframe",
+                        "in": "query",
+                        "description": " the number of minutes before a\n              monitor will notify when data stops reporting. Must be at least\n              2x the monitor timeframe for metric alerts or 2 minutes for\n              service checks.\n              Default: 2x timeframe for metric alerts, 2 minutes for\n              service checks\n"
+                    },
+                    {
+                        "name": "timeout_h",
+                        "in": "query",
+                        "description": " the number of hours of the monitor not\n              reporting data before it will automatically resolve from a\n              triggered state.\n              Default: None\n"
+                    },
+                    {
+                        "name": "require_full_window",
+                        "in": "query",
+                        "description": " a boolean indicating whether\n              this monitor needs a full window of data before it's evaluated. We\n              highly recommend you set this to False for sparse\n              metrics, otherwise some evaluations will be skipped.\n              Default: True for \"on average\", \"at all times\" and\n              \"in total\" aggregation. False otherwise.\n"
+                    },
+                    {
+                        "name": "renotify_interval",
+                        "in": "query",
+                        "description": " the number of minutes after\n              the last notification before a monitor will re-notify on the\n              current status. It will only re-notify if it's not resolved.\n              Default: None\n"
+                    },
+                    {
+                        "name": "escalation_message",
+                        "in": "query",
+                        "description": " a message to include with a\n              re-notification. Supports the '@username' notification we allow\n              elsewhere. Not applicable if renotify_interval is\n              None.\n              Default: None\n"
+                    },
+                    {
+                        "name": "notify_audit",
+                        "in": "query",
+                        "description": " a boolean indicating whether tagged\n              users will be notified on changes to this monitor.\n              Default: False\n"
+                    },
+                    {
+                        "name": "locked",
+                        "in": "query",
+                        "description": " a boolean indicating whether changes to\n              to this monitor should be restricted to the creator or admins.\n              Default: False\n"
+                    },
+                    {
+                        "name": "include_tags",
+                        "in": "query",
+                        "description": " a boolean indicating whether\n              notifications from this monitor will automatically insert its\n              triggering tags into the title.\n              Default: True\n              Examples:\n\n                \n\n                  True:\n                      [Triggered on {host:h1}] Monitor Title\n"
+                    },
+                    {
+                        "name": "[Triggered] Monitor Title",
+                        "in": "query",
+                        "description": "\n"
+                    },
+                    {
+                        "name": "thresholds",
+                        "in": "query",
+                        "description": " a dictionary of thresholds by threshold\n              type. Currently we have two threshold types for metric alerts:\n              critical and warning. Critical is defined in the query, but can\n              also be specified in this option. Warning threshold can only be\n              specified using the thresholds option.\n              Example: {'critical': 90, 'warning': 80}\n              "
+                    }
+                ]
+            },
+            "GET": {
+                "summary": "Get Monitor",
+                "description": "Get all monitor details",
+                "operationId": "GetMonitor",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/monitor\/:monitor_id": {
+            "GET": {
+                "summary": "Get Monitor Monitor",
+                "description": "GET monitor monitor",
+                "operationId": "GetMonitorMonitor",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "PUT": {
+                "summary": "Put Monitor Monitor",
+                "description": "PUT monitor monitor",
+                "operationId": "PutMonitorMonitor",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "DELETE": {
+                "summary": "Delete Monitor Monitor",
+                "description": "DELETE monitor monitor",
+                "operationId": "DeleteMonitorMonitor",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/monitor\/mute_all": {
+            "POST": {
+                "summary": "Add Monitor Mute All",
+                "description": "\n        Muting will prevent all monitors from notifying through email and posts\n        to the event stream. State changes will only be visible by checking\n        the alert page.\n        ",
+                "operationId": "PostMonitorMuteAll",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/monitor\/unmute_all": {
+            "POST": {
+                "summary": "Add Monitor Unmute All",
+                "description": "\n        Disables muting all monitors. Throws an error if mute all was\n        not enabled previously.\n        ",
+                "operationId": "PostMonitorUnmuteAll",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/monitor\/:monitor_id\/mute": {
+            "POST": {
+                "summary": "Add Monitor Monitor  Mute",
+                "description": "POST monitor monitor  mute",
+                "operationId": "PostMonitorMonitorMute",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/dash": {
+            "POST": {
+                "summary": "Add Dash",
+                "description": "Create a Timeboard",
+                "operationId": "PostDash",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "{\"requests\"",
+                        "in": "query",
+                        "description": "\n                \n              \n            "
+                    }
+                ]
+            },
+            "GET": {
+                "summary": "Get Dash",
+                "description": "Get all Timeboards",
+                "operationId": "GetDash",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/dash\/:dash_id": {
+            "PUT": {
+                "summary": "Put Dash Dash",
+                "description": "Update a Timeboard",
+                "operationId": "PutDashDash",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "{\"requests\"",
+                        "in": "query",
+                        "description": "\n                \n              \n            "
+                    }
+                ]
+            },
+            "DELETE": {
+                "summary": "Delete Dash Dash",
+                "description": "Delete a Timeboard",
+                "operationId": "DeleteDashDash",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "user": {
+            "POST": {
+                "summary": "Add User",
+                "description": "POST user",
+                "operationId": "PostUser",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "GET": {
+                "summary": "Get User",
+                "description": "GET user",
+                "operationId": "GetUser",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "user\/:handle": {
+            "GET": {
+                "summary": "Get User Handle",
+                "description": "GET user handle",
+                "operationId": "GetUserHandle",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "PUT": {
+                "summary": "Put User Handle",
+                "description": "\n          Can only be used with application keys belonging to administrators.\n        ",
+                "operationId": "PutUserHandle",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "graph\/embed": {
+            "GET": {
+                "summary": "Get Graph Embed",
+                "description": "\n          Gets a list of previously created embeddable graphs.\n        ",
+                "operationId": "GetGraphEmbed",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "POST": {
+                "summary": "Add Graph Embed",
+                "description": "\n          Creates a new embeddable graph.\n        ",
+                "operationId": "PostGraphEmbed",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "graph\/embed\/:embed_id": {
+            "GET": {
+                "summary": "Get Graph Embed Embed",
+                "description": "\n          Get the HTML fragment for a previously generated embed with embed_id.\n        ",
+                "operationId": "GetGraphEmbedEmbed",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "graph\/embed\/:embed_id\/enable": {
+            "GET": {
+                "summary": "Get Graph Embed Embed  Enable",
+                "description": "\n          Enable a specified embed.\n        ",
+                "operationId": "GetGraphEmbedEmbedEnable",
+                "deprecated": 0,
+                "parameters": []
+            }
+        }
+    },
+    "components": {
+        "schemas": []
+    }
+}
